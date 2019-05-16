@@ -1,2 +1,18 @@
-<h1>Billboards#index</h1>
-<p>Find me in app/views/billboards/index.html.erb</p>
+<h1>Billboards</h1>
+<hr/>
+<h2>Welcome to the Top of the Charts</h2>
+<%= link_to "New Billboard", new_billboard_path %>
+<p>Choose the chart to explore<p>
+<div class="card" style="width: 18rem;">
+<% @billboards.each do |billboard| %>
+  <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?cs=srgb&dl=audience-band-concert-1105666.jpg&fm=jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=link_to "#{billboard.title}", billboard %> </h5>
+    <p class="card-text"></p>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary"><%= link_to "Edit", edit_billboard_path(billboard) %></button>
+    <button type="button" class="btn btn-secondary"><%= link_to "Destroy", @billboard, method: :destroy, data: { confirm: 'Are you sure?' }%></button>
+  </div>
+</div>
+<%end%>
+</div>

@@ -1,0 +1,8 @@
+<%= form_with(model: billboard, local: true, class: "form") do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, placeholder: "Name of Billboard", autofocus: true %>
+  </div>
+  
+  <%= f.submit %>
+<% end %>
