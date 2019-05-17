@@ -1,2 +1,10 @@
-<h1>Artists#edit</h1>
-<p>Find me in app/views/artists/edit.html.erb</p>
+<h1>Edit Artist</h1>
+<hr />
+<%= render "form", artist: @artist %>
+<br>
+<button type="button" class="btn btn-outline-primary btn-sm">
+<%= link_to "show", artist_path(@artist) %>
+</button>
+<button type="button" class="btn btn-outline-primary btn-sm">
+<%= link_to "Back", artist_path %>
+</button>

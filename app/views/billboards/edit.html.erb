@@ -1,7 +1,12 @@
 <h1>Edit Billboard</h1>
- 
-<%# Ternary if sub id exist then edit else create%>
+<hr />
 <%= render "form", billboard: @billboard %>
-
+<br>
+<button type="button" class="btn btn-outline-primary btn-sm">
 <%= link_to "show", billboard_path(@billboard) %>
-<%= link_to "Back", billboard_path %>
+</button>
+<button type="button" class="btn btn-outline-primary btn-sm">
+<%= link_to "Back", billboards_path %>
+</button>
+
+

@@ -1,2 +1,30 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h1 class="ui header">Songs for <%= link_to "#{@billboard}"%></h1>
+<%= link_to 'New Song', new_billboard_song_path(:billboard_id) %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+  <% @songs.each do |song| %>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="ui card">
+        <div class="image">
+          <img src="https://picsum.photos/200"/>
+        </div>
+        <div class="content">
+          <%= link_to " #{Song.title} ", billboard_song_path(:billboard_id, song), class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Edit', edit_song_path(song) %>
+            </div>
+            <div class="ui basic red button">
+              <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%# <% end %> %>
+</div>
+
+ 

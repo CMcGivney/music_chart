@@ -1,18 +1,30 @@
-<h1>Billboards</h1>
-<hr/>
-<h2>Welcome to the Top of the Charts</h2>
-<%= link_to "New Billboard", new_billboard_path %>
-<p>Choose the chart to explore<p>
-<div class="card" style="width: 18rem;">
-<% @billboards.each do |billboard| %>
-  <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?cs=srgb&dl=audience-band-concert-1105666.jpg&fm=jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%=link_to "#{billboard.title}", billboard %> </h5>
-    <p class="card-text"></p>
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary"><%= link_to "Edit", edit_billboard_path(billboard) %></button>
-    <button type="button" class="btn btn-secondary"><%= link_to "Destroy", @billboard, method: :destroy, data: { confirm: 'Are you sure?' }%></button>
-  </div>
+
+<h1 class="ui header">Billboard Charts</h1>
+<%= link_to 'New billboard', new_billboard_path %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+  <% @billboards.each do |billboard| %>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="ui card">
+        <div class="image">
+          <img src="https://tackleandlines.files.wordpress.com/2013/01/543621_10151001266261290_1182845659_n.jpg"/>
+        </div>
+        <div class="content">
+          <%= link_to " #{billboard.title} ", billboard_path(billboard), class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Edit', edit_billboard_path(billboard) %>
+            </div>
+            <div class="ui basic red button">
+              <%= link_to 'Destroy', billboard, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<%end%>
-</div>
+

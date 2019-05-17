@@ -1,3 +1,16 @@
-<h1><%= @billboard.title%> </h1>
-<hr />
+<div class="ui card">
+  <div class="image">
+    <img src="https://tackleandlines.files.wordpress.com/2013/01/543621_10151001266261290_1182845659_n.jpg"/>
+  </div>
+  <div class="content">
+    <p class="header">
+      <%= @billboard.title %> 
+    </p>
+  <div class="extra content">
+<%= link_to 'View Artists', artists_path %>
+<br /> 
+<%= link_to "View Songs", billboard_songs_path(:billboard_id) %>
+<br />
+<%= link_to 'Back', billboards_path %>
+</div>
 
