@@ -1,2 +1,11 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1><%= @billboard.title %></h1>
+<h4>Title: <%= @song.title %></h4>
+<h4>Genre: <%= @song.genre %></h4>
+<h4>Artist: <%= @song.musician %></h4>
+<h4>Released: <%= @song.released %></h4>
+<h4>Featuring: <%= @song.featuring %></h4>
+<br />
+<br />
+<%= link_to 'Edit song', edit_billboard_song_path([@billboard, @song]) %> |
+<%= link_to 'Delete song', [@billboard, @song], method: :delete %> |
+<%= link_to 'Back To songs', billboard_songs_path(@billboard) %>

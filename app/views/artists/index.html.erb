@@ -7,7 +7,7 @@
     <div class="sixteen wide mobile eight wide tablet four wide computer column">
       <div class="ui card">
         <div class="image">
-          <img src="https://upload.wikimedia.org/wikipedia/en/2/25/Grateful_Dead_-_Anthem_of_the_Sun.jpg"/>
+          <img src="https://picsum.photos/200/?blur3<%= artist.image %>?set=set1"/>
         </div>
         <div class="content">
           <%= link_to "#{artist.name}", artist_path(artist) , class: "header" %>
@@ -26,6 +26,8 @@
     </div>
   <% end %>
 </div>
-
+<br/>
+<hr />
+<button class="ui basic button" ><%= link_to "Back", billboards_path %></button>
 
   
