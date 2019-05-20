@@ -1,16 +1,33 @@
-<div class="ui card">
+<div class="ui centered card">
   <div class="image">
-    <img src="https://tackleandlines.files.wordpress.com/2013/01/543621_10151001266261290_1182845659_n.jpg"/>
-  </div>
-  <div class="content">
-    <p class="header">
+     <img src="https://tackleandlines.files.wordpress.com/2013/01/543621_10151001266261290_1182845659_n.jpg"/>
+    </div>
+    <div class="content">
+      <p class="header">
       <%= @billboard.title %> 
     </p>
-  <div class="extra content">
-<%= link_to 'View Artists', artists_path %>
-<br /> 
-<%= link_to "View Songs", billboard_songs_path(:billboard_id) %>
-<br />
-<%= link_to 'Back', billboards_path %>
 </div>
+</div>
+<hr />
+<br />
+
+<div class= "ui centered grid">
+  <% @billboard.songs.each do |song| %>
+   <ol class="ui list">
+    <div class="four wide column">
+     <li> <%= song.title %> <%= song.musician %>  </li></div>
+     </ol>
+   </div>
+  <%end%>
+</div>
+<br />
+<br />
+<div class="ui buttons">
+<button class= "ui positive basic button"><%= link_to 'Edit List', billboard_songs_path(:Billboard) %></button>
+<div class= "or"></div>
+<button class= "ui positive basic button"><%= link_to 'Add song', new_billboard_song_path(:Billboard) %></button>
+
+</div>
+<button class= "ui green right floated basic button"><%= link_to 'Back', billboards_path %></button>
+
 

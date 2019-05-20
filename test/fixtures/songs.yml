@@ -5,13 +5,15 @@ one:
   genre: MyString
   released: MyString
   featuring: MyString
+  musician: MyString
+  image: MyString
   billboard: one
-  artist: one
 
 two:
   title: MyString
   genre: MyString
   released: MyString
   featuring: MyString
+  musician: MyString
+  image: MyString
   billboard: two
-  artist: two

@@ -1,5 +1,5 @@
 
-<h1 class="ui header">Billboard Charts</h1>
+<h1 class="ui header centered">Billboard Charts</h1>
 <%= link_to 'New billboard', new_billboard_path %>
 <div class="ui divider"></div>
 
@@ -11,17 +11,16 @@
           <img src="https://tackleandlines.files.wordpress.com/2013/01/543621_10151001266261290_1182845659_n.jpg"/>
         </div>
         <div class="content">
-          <%= link_to " #{billboard.title} ", billboard_path(billboard), class: "header" %>
+           <%= link_to " #{billboard.title} ", billboard_path(billboard), class: " ui header centered" %>
         </div>
         <div class="extra content">
-          <div class="ui two buttons">
-            <div class="ui basic green button">
-              <%= link_to 'Edit', edit_billboard_path(billboard) %>
+           <div class="ui three buttons">
+             <button class= "ui blue basic button"><%= link_to 'Edit', edit_billboard_path(billboard) %></button>
+              <div class= 'or'></div>
+              <button class= "ui green basic button"><%= link_to 'View Chart', billboard_songs_path(billboard) %></button>
+              <div class= 'or'></div>
+              <button class="ui red basic button"><%= link_to 'Destroy', billboard, method: :delete, data: { confirm: 'Are you sure?' } %></button>
             </div>
-            <div class="ui basic red button">
-              <%= link_to 'Destroy', billboard, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          </div>
         </div>
       </div>
     </div>

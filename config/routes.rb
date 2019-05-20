@@ -6,8 +6,8 @@ resources :billboards do
   resources :songs
 end
 
-resources :artists do 
-  resources :songs
+resources :songs do 
+  resources :artists
 end
 
 # resources :songs do 

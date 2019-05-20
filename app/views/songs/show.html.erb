@@ -8,4 +8,5 @@
 <br />
 <%= link_to 'Edit song', edit_billboard_song_path([@billboard, @song]) %> |
 <%= link_to 'Delete song', [@billboard, @song], method: :delete %> |
+<%= link_to 'View Artist', song_artist_path(@song)%> |
 <%= link_to 'Back To songs', billboard_songs_path(@billboard) %>

@@ -1,4 +1,4 @@
 class Song < ApplicationRecord
-  belongs_to :billboard, optional: true
-  belongs_to :artist, optional: true
+  belongs_to :billboard
+  has_many :artists, dependent: :destroy
 end

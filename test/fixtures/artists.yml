@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  song: one
 
 two:
   name: MyString
+  song: two

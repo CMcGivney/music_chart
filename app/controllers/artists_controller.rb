@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
  
-before_action :set_artist, only: [:show, :edit, :update, :destroy]
+before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
     @artists = Artist.all
@@ -17,9 +17,9 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @artist = Artist.new(artist_params)
+    @artist = @song.artists.new(artist_params)
     if @artist.save
-      redirect_to artists_path
+      redirect_to billboard_song_path(@animal.billboard_id, @song)
     else
       render :new
     end
@@ -39,10 +39,10 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy]
   end
   private
   
-    def set_artist
-    @artist = Artist.find(params[:id])
+    def set_song
+    @song = Song.find(params[:song_id])
   end
   def artist_params
-    params.require(:artist).permit(:name, :image)
+    params.require(:artist).permit(:name)
   end
 end
