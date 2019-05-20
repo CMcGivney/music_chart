@@ -1,4 +1,5 @@
-<h1>Click an song To View It</h1>
+<h1 class="centered">Click A Song To View</h1>
+<hr />
 <ol>
   <% @songs.each do |song| %>
     <li><%= link_to song.title, [@billboard, song] %></li>
@@ -8,4 +9,4 @@
 <br />
 <br />
 <button class= "ui positive basic button"><%= link_to 'Add song', new_billboard_song_path(@billboard) %></button>
-<button class= "ui primary basic button"><%= link_to "Back", billboards_path%></button>
+<button class= "ui right floated primary basic button"><%= link_to "Back", billboards_path%></button>
