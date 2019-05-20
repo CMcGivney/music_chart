@@ -23,9 +23,9 @@
 <br />
 <br />
 <div class="ui buttons">
-<button class= "ui positive basic button"><%= link_to 'Edit List', billboard_songs_path(:Billboard) %></button>
+<button class= "ui positive basic button"><%= link_to 'Edit List', edit_billboard_song_path(@billboard, :id) %></button>
 <div class= "or"></div>
-<button class= "ui positive basic button"><%= link_to 'Add song', new_billboard_song_path(:Billboard) %></button>
+<button class= "ui positive basic button"><%= link_to 'Add song', new_billboard_song_path(@billboard) %></button>
 
 </div>
 <button class= "ui green right floated basic button"><%= link_to 'Back', billboards_path %></button>

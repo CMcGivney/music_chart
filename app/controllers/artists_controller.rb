@@ -19,7 +19,7 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   def create
     @artist = @song.artists.new(artist_params)
     if @artist.save
-      redirect_to billboard_song_path(@animal.billboard_id, @song)
+      redirect_to billboard_song_path(@song.billboard_id, @song)
     else
       render :new
     end
