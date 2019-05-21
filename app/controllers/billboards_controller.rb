@@ -1,23 +1,19 @@
 class BillboardsController < ApplicationController
-  before_action :set_bill, only: [:edit, :show, :update, :destroy]
+  before_action :set_billboard, only: [:show, :edit, :update]
 
-  
   def index
-    @billboards = Billboard.all
+    @billboards = current_user.billboards
   end
 
   def show
   end
 
-  def edit
-  end
-
   def new
     @billboard = Billboard.new
   end
-  
-  def create  
-    @billboard = Billboard.new(bill_params)
+
+  def create
+    @billboard = current_user.billboards.new(billboard_params)
     if @billboard.save
       redirect_to billboards_path
     else
@@ -25,9 +21,12 @@ class BillboardsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
-    if @billboard.update(bill_params)
-      redirect_to billboard_path(@billboard)
+    if @billboard.update(billboard_params)
+      redirect_to billboards_path
     else
       render :edit
     end
@@ -39,11 +38,13 @@ class BillboardsController < ApplicationController
   end
 
   private
-  def set_bill
-    @billboard = Billboard.find(params[:id])
-  end
-  def bill_params
-    params.require(:billboard).permit(:title)
-  end
+    def billboard_params
+      params.require(:billboard).permit(:name, :balance)
+    end
+
+    # don't just find by the billboard model or you may potentially be able to view other users billboards
+    def set_billboard
+      @billboard = current_user.accounts.find(params[:id])
+    end
 
 end
